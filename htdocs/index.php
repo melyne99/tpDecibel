@@ -21,8 +21,8 @@ $query = $bdd->prepare("SELECT * FROM users WHERE pseudo = :pseudo")
       </div>
       <div class="formcontainer">
       <div class="container">
-        <label for="uname"><strong>Username</strong></label>
-        <input type="text" placeholder="Enter Username" name="pseudo" required>
+        <label for="uname"><strong>Nom d'utilisateur</strong></label>
+        <input type="text" placeholder="Pseudo" name="pseudo" required>
       </div>
       <button type="submit"><strong>S'INSCRIRE</strong></button>
       <div class="container" style="background-color: #eee">
