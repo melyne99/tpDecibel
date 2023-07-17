@@ -13,6 +13,6 @@ $query = $bdd->prepare("SELECT * FROM users WHERE pseudo = :pseudo")
     <title>Document</title>
 </head>
 <body>
-    
+   couccou 
 </body>
 </html>
