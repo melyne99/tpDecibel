@@ -48,7 +48,7 @@ $query = $bdd->prepare("SELECT * FROM users WHERE pseudo = :pseudo")
       }
       h1 {
       text-align:center;
-      fone-size:18;
+      font-size:18;
       }
       button:hover {
       opacity: 0.8;
