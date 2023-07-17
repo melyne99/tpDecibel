@@ -12,34 +12,44 @@ include 'connexion.php';
 
 </head>
 <body>
-<section class="wrapper">
+<section>
 
-<article class="music-container">
+<!--
 
+  Hey, you! Go check out this wonderful dribbble by Sebastian Beltz!
+  http://dribbble.com/shots/1408634-Music-Player
+
+-->
+
+<div class="music-player">
+  <img src="https://images.unsplash.com/photo-1503248947681-3198a7abfcc9?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9dea5064c1d0b9f8969216204ba66c73" class="album" />
+  <div class="dash">
+    <a href="#mute" class="fa fa-volume-up"></a>
+    <span class="volume-level">
+      <em style="width: 75%"></em>
+    </span>
+    <a href="#share" class="fa fa-share"></a>
+    <a href="#love" class="fa fa-heart"></a>
+    <div class="seeker">
+      <div class="wheel">
+        <div class="progress"></div>
+      </div>
+    </div>
+    <a href="#seek"></a>
     <div class="controls">
-        <input type="radio" name="controls" id="btn-play">
-        <label for="btn-play" class="lbl-btn-play"><span></span></label>
-
-        <input type="radio" name="controls" id="btn-pause">
-        <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
-
-        <label class="lbl-btn-reset"><span></span></label>
+      <a href="#back" class="fa fa-fast-backward"></a>
+      <a href="#play" class="fa fa-pause"></a>
+      <a href="#forward" class="fa fa-fast-forward"></a>
     </div>
-
-    <div class="cover">
-        <div class="static-card">
-            <img src="http://f1.bcbits.com/img/a1312167393_16.jpg" alt="">
-        </div>
-        <div class="flip-card">
-            <img src="http://f1.bcbits.com/img/a1312167393_16.jpg" alt="">
-        </div>
+    <div class="info">
+      <i><span name="current">0:00</span> / <span name="duration">0:00</span></i>
+      <label>Marteria - OMG</label>
+      <small>Zum Glück in die Zukunft II</small>
     </div>
-</article>
-
-<p class="info">Hover/Click on album cover to show controls</p>
-
+  </div>
+</div>
 </section>
-
-<script src="lecteur.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="Javascript/lecteur.js"></script>
 </body>
 </html>
