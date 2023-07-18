@@ -38,13 +38,13 @@ function handleControlsClick(e) {
 function init() {
   context.classList.add('is-hovering');
 
-  audioPlayer = new Audio('<?php echo $audioFilePath; ?>');
+  audioPlayer = new Audio($audioFilePath);
   init();
 }
 
 // Ajoutez l'événement d'écouteur d'événement pour gérer l'hover sur l'élément context
-context.addEventListener('mouseout', toggleHover);
 context.addEventListener('mouseover', toggleHover);
+context.addEventListener('mouseout', toggleHover);
 
 
   setTimeout(function() {
