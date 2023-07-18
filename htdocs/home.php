@@ -30,7 +30,7 @@ foreach ($songs as $song) {
 
 <!DOCTYPE html>
 <html>
-  <title>Home</title>
+  <title>Hom</title>
   <head>
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
