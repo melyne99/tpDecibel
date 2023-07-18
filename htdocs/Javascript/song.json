@@ -1,0 +1,30 @@
+[
+    {
+      "song_id": 1,
+      "title": "Get Jinxed",
+      "artist": "League Of Legends",
+      "album": "The Music of League Of Legend, volume 1",
+      "duration": 172, 
+      "file_path": "music/Get Jinxed (ft. Djerv)  Official Music Video - League of Legends.mp3",
+      "genre": "Pop"
+    },
+    {
+      "song_id": 2,
+      "title": "Song 2",
+      "artist": "Artist 2",
+      "album": "Album 2",
+      "duration": 210, 
+      "file_path": "/chemin/vers/mon_dossier_de_musique/song2.mp3",
+      "genre": "Rock"
+    },
+    {
+      "song_id": 3,
+      "title": "Song 3",
+      "artist": "Artist 3",
+      "album": "Album 3",
+      "duration": 150, 
+      "file_path": "/chemin/vers/mon_dossier_de_musique/song3.mp3",
+      "genre": "Jazz"
+    }
+  ]
+  
