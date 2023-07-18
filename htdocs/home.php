@@ -1,27 +1,5 @@
 <?php
 include 'connexion.php';
-include 'get_songs.php';
-
-// Chemin d'accès au fichier JSON
-$jsonFilePath = 'Javascript/song.json';
-
-// Lire le contenu du fichier JSON
-$jsonContent = file_get_contents($jsonFilePath);
-
-// Convertir le contenu JSON en un tableau PHP
-$songs = json_decode($jsonContent, true);
-
-// Vérifier si la conversion a réussi
-if ($songs === null) {
-    die('Erreur lors de la lecture du fichier JSON.');
-}
-
-// Vous pouvez maintenant utiliser le tableau PHP $songs qui contient vos morceaux de musique
-// par exemple, vous pouvez parcourir le tableau pour afficher les titres et les artistes :
-
-foreach ($songs as $song) {
-    echo 'Titre : ' . $song['title'] . ', Artiste : ' . $song['artist'] . '<br>';
-}
 ?>
 
 
