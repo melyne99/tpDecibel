@@ -16,7 +16,7 @@
     <div class="dropdown-content">
       <a href="#album">Album</a>
       <a href="#profil">Profil</a>
-      <a href="#playlist">Playliste</a>
+      <a href="#playlist">Playlist</a>
     </div>
   </div>
 </div>

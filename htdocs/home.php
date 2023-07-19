@@ -17,13 +17,10 @@ if ($songs === null) {
     die('Erreur lors de la lecture du fichier JSON.');
 }
 
-// Vous pouvez maintenant utiliser le tableau PHP $songs qui contient vos morceaux de musique
-// par exemple, vous pouvez parcourir le tableau pour afficher les titres et les artistes :
-
-foreach ($songs as $song) {
-    echo 'Titre : ' . $song['title'] . ', Artiste : ' . $song['artist'] . '<br>';
-}
-?>
+// Faire un echo pour afficher le contenu du tableau $songs
+echo '<pre>';
+print_r($songs);
+echo '</pre>';
 ?>
 
 
@@ -55,16 +52,13 @@ foreach ($songs as $song) {
 
   <div class="cover">
     <div class="static-card">
-      <img src="http://f1.bcbits.com/img/a1312167393_16.jpg" alt="">
+      <img src="cover/ACDC.jpeg" alt="">
     </div>
     <div class="flip-card">
-      <img src="http://f1.bcbits.com/img/a1312167393_16.jpg" alt="">
+      <img src="cover/ACDC.jpeg" alt="">
     </div>
   </div>
 </article>
-
-<p class="info">Hover/Click on album cover to show controls</p>
-
 </section>
 <script src="modernizr.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -3,7 +3,7 @@ let context = document.querySelector('.music-container');
 let controls = document.querySelector('.controls');
 
 //CONST
-let audioFilePath = 'music/ACDC - Back In Black (Official Video).mp3'; // Remplacez cela par le chemin vers votre fichier audio
+let audioFilePath = 'Dossier personnel/devilbox/data/www/tpDecibel/htdocs/music'; // Remplacez cela par le chemin vers votre fichier audio
 
 // letS
 let audioPlayer;
@@ -38,30 +38,31 @@ function handleControlsClick(e) {
 function init() {
   context.classList.add('is-hovering');
 
-  audioPlayer = new Audio($audioFilePath);
-  init();
-}
-
-// Ajoutez l'événement d'écouteur d'événement pour gérer l'hover sur l'élément context
-context.addEventListener('mouseover', toggleHover);
-context.addEventListener('mouseout', toggleHover);
-
+  audioPlayer = new Audio(); // Créer l'élément audio sans définir le chemin ici
+  audioPlayer.src = audioFilePath; // Définir le chemin de la source audio ici
 
   setTimeout(function() {
-    controls.querySelector('input#btn-play').checked = true;
-    audioPlayer.play();
+    controls.querySelector('label.lbl-btn-play').click();
+    // Pour déclencher l'événement "click" sur le bouton play, au lieu de définir l'attribut "checked"
   }, 1000);
+
   setTimeout(function() {
     context.classList.remove('is-hovering');
-  }, 4000);
+  }, 0);
 
   controls.addEventListener('click', handleControlsClick);
 
-  if (Modernizr.touch) {
+  if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
     context.addEventListener('click', toggleHover);
   }
+}
 
+// Ajoutez l'événement d'écouteur d'événement pour gérer l'hover sur l'élément context
+context.addEventListener('mouseout', toggleHover);
+context.addEventListener('mouseover', toggleHover);
 
-// Charger le fichier audio
-audioPlayer = new Audio(audioFilePath);
-init();
+// Charger le fichier audio et initialiser
+document.addEventListener('DOMContentLoaded', function() {
+  audioPlayer.addEventListener('canplay', init);
+  audioPlayer.load(); // Charger le fichier audio dès que possible
+});
