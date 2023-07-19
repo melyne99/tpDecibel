@@ -1,6 +1,7 @@
 <?php
 // Remplacez ces informations par celles de votre base de données
 include 'connexion.php';
+include 'navbar.php';
 
 // Récupérer les chansons de la base de données
 $sql = "SELECT * FROM Songs";
