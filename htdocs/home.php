@@ -1,68 +1,42 @@
 <?php
+// Remplacez ces informations par celles de votre base de données
 include 'connexion.php';
-include 'get_songs.php';
-include 'navbar.php';
 
-// Chemin d'accès au fichier JSON
-$jsonFilePath = 'Javascript/song.json';
+// Récupérer les chansons de la base de données
+$sql = "SELECT * FROM Songs";
+$result = $bdd->query($sql);
 
-// Lire le contenu du fichier JSON
-$jsonContent = file_get_contents($jsonFilePath);
-
-// Convertir le contenu JSON en un tableau PHP
-$songs = json_decode($jsonContent, true);
-
-// Vérifier si la conversion a réussi
-if ($songs === null) {
-    die('Erreur lors de la lecture du fichier JSON.');
+// Vérifier s'il y a des chansons
+if ($result->rowCount() > 0) {
+    echo '<ul>';
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo '<li><a href="#" onclick="playAudio(\'' . $row['file_path'] . '\')">' . $row['title'] . '</a></li>';
+    }
+    echo '</ul>';
+} else {
+    echo "Aucune chanson trouvée dans la base de données.";
 }
-
-// Faire un echo pour afficher le contenu du tableau $songs
-echo '<pre>';
-print_r($songs);
-echo '</pre>';
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
-  <title>Home</title>
-  <head>
+<head>
+    <title>Lecteur audio</title>
+</head>
+<body>
+    <h1>Mes chansons</h1>
     
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylecss/home.css">
-    <script src="Javascript/modernizr-custom.js"></script>
-  </head>
-  <body>
-  <section class="wrapper">
+    <audio controls id="lecteur-audio">
+        Votre navigateur ne prend pas en charge l'élément audio.
+    </audio>
 
-<article class="music-container">
-
-  <div class="controls">
-    <input type="radio" name="controls" id="btn-play">
-    <label for="btn-play" class="lbl-btn-play"><span></span></label>
-
-    <input type="radio" name="controls" id="btn-pause">
-    <label for="btn-pause" class="lbl-btn-pause"><span></span></label>
-
-    <label class="lbl-btn-reset"><span></span></label>
-  </div>
-
-  <div class="cover">
-    <div class="static-card">
-      <img src="cover/ACDC.jpeg" alt="">
-    </div>
-    <div class="flip-card">
-      <img src="cover/ACDC.jpeg" alt="">
-    </div>
-  </div>
-</article>
-</section>
-<script src="modernizr.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Javascript/lecteur.js"></script>
-
-  </body>
+    <script>
+        // Fonction pour jouer le fichier audio
+        function playAudio(chemin) {
+            var lecteurAudio = document.getElementById('lecteur-audio');
+            lecteurAudio.src = chemin;
+            lecteurAudio.play();
+        }
+    </script>
+</body>
 </html>
