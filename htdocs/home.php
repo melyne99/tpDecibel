@@ -56,7 +56,32 @@ if ($result->rowCount() > 0) {
     </div>
 
     <script>
-        // ... Votre code JavaScript ici ...
+           // Tableau pour stocker les chemins des fichiers audio
+           let cheminsAudio = <?php echo json_encode($chemins_audio); ?>;
+
+// Index de la chanson actuellement en cours de lecture
+let currentIndex = 0;
+
+// Fonction pour jouer le fichier audio
+function playAudio(index) {
+let lecteurAudio = document.getElementById('lecteur-audio');
+lecteurAudio.src = cheminsAudio[index];
+lecteurAudio.play();
+currentIndex = index;
+}
+
+
+// Fonction pour jouer la chanson suivante
+function nextAudio() {
+    currentIndex = (currentIndex + 1) % cheminsAudio.length;
+    playAudio(currentIndex);
+}
+
+// Fonction pour jouer la chanson précédente
+function previousAudio() {
+    currentIndex = (currentIndex - 1 + cheminsAudio.length) % cheminsAudio.length;
+    playAudio(currentIndex);
+}
 
         // Fonction pour ouvrir la boîte de dialogue
         function openCommentModal() {
