@@ -1,41 +1,103 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
+/* Réinitialisation des styles par défaut */
+body, ul, li, p, h1 {
   margin: 0;
-  text-align: center;
+  padding: 0;
 }
 
-li {
-  margin: 10px;
+/* Style pour la liste déroulante (masquée par défaut) */
+#song-list-container {
+  display: none;
+  position: absolute;
+  top: 50px; /* Ajustez la position verticale selon vos préférences */
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 999;
 }
 
-audio {
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
+#song-list-container ul {
+  list-style: none;
+  padding: 10px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
+#song-list-container li {
+  margin-bottom: 10px;
+}
+
+#song-list-container li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#song-list-container li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style pour le bouton d'ouverture de la liste */
+#song-list-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #7a7a7a;
+#song-list-btn:hover {
+  background-color: #0056b3;
 }
 
-button:active {
-  background-color: #000000;
+/* Style pour le lecteur audio et les boutons */
+#lecteur-audio-container {
+  max-width: 500px; /* Ajustez la largeur maximale du conteneur du lecteur audio */
+  margin: 0 auto;
+  border: 5px solid #ccc; /* Bordure autour du lecteur audio */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#lecteur-audio {
+  width: 100%;
+}
+
+#controls-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#controls-container button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#controls-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Style pour l'image */
+#song-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#song-image {
+  max-width: 100%; /* Image adaptée à la taille du lecteur */
+  max-height: 300px; /* Ajustez la hauteur maximale selon vos préférences */
+  border: 5px solid #ccc; /* Bordure autour de l'image */
+  border-radius: 10px;
 }
