@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="stylecss/navbar.css">
   <!-- Navbar -->
 <div class="navbar">
-  <a href="index.php">Decibel</a>
+  <a href="home.php">Decibel</a>
   <div class="search-container">
     <ul action="/search">
       <input type="text" placeholder="Recherche..." name="search">
@@ -14,8 +14,8 @@
   <div class="dropdown">
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
-      <a href="#album">Album</a>
-      <a href="#profil">Profil</a>
+      <a href="album.php">Album</a>
+      <a href="profil.php">Profil</a>
       <a href="#playlist">Playlist</a>
     </div>
   </div>
