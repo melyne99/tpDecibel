@@ -1,0 +1,79 @@
+/* Reset des styles par défaut pour une meilleure mise en page */
+body, h1, h2, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c4c4c4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center; /* Centrer le texte */
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center; /* Centrer le texte */
+}
+
+p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center; /* Centrer le formulaire */
+}
+
+input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px; /* Espacement entre le champ texte et les boutons */
+}
+
+input[type="submit"] {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #a3a3a3;
+}
+
+/* Styles spécifiques pour le conteneur du pseudo */
+.user-info {
+    background-color: #333;
+    color: #fffdfd;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Centrer le contenu */
+}
+
+.user-info h1 {
+    font-size: 28px;
+    
+}
+
+.user-info p {
+    font-size: 16px;
+    color: #fffdfd;
+}
