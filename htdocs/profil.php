@@ -2,6 +2,7 @@
 session_start();
 include 'connexion.php';
 include 'navbar.php';
+include 'deconnexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +30,18 @@ include 'navbar.php';
                 <p>Pseudo actuel : <?php echo $user['pseudo']; ?></p>
 
                 <h2>Modifier Pseudo</h2>
-                <form action="modifier_pseudo.php" method="POST">
-                    <input type="text" name="nouveau_pseudo" placeholder="Nouveau pseudo" required>
+                <form action="modifier_pseudo.php" method="POST">    
+                <input type="text" name="nouveau_pseudo" placeholder="Nouveau pseudo" required>
                     <input type="submit" value="Modifier">
                 </form>
+                
+                <form action="deconnexion.php" method="POST">
+                    <input type="submit" value="Deconnexion">
             </div>
         <?php
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-            header('location: connexion.php');
+            header('location: index.php');
             exit;
         }
         ?>
