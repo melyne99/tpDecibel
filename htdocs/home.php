@@ -124,10 +124,9 @@ if ($result->rowCount() > 0) {
             commentSongId.value = songId;
         }
     </script>
-    <script src="Javascript/fondu.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Javascript/lecteur.js"></script>
     <script src="Javascript/main.js"></script>
+    <script src="Javascript/lecteur.js"></script>
 </body>
 </html>
